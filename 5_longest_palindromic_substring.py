@@ -10,23 +10,21 @@ class Solution:
             while True:
             # looking for the same symbol further in next substr starting from the end
 
-                end_indx = s[begin_index:dummy_len].rfind(symbol)
-                print('search sub', s[begin_index:dummy_len])
-                if end_indx in ( -1,0):
+                end_indx = s[0:dummy_len].rfind(symbol)
+                #print('search sub', s[begin_index:dummy_len])
+                if end_indx == -1 or end_indx <  begin_index:
                     break
                 dummy_str = s[begin_index:end_indx+1]
-                print(dummy_str)            
+                #print(dummy_str)            
                 if dummy_str== dummy_str[::-1] and len(pali)< len(dummy_str):
                     pali=dummy_str
                     break
                 else:
                     dummy_len = end_indx
-
-
         # if there is no match then it's not pali
         # if we found match then check it at pali 
         # if not move further and try find next
         return (pali)
 
 x= Solution()
-print (x.longestPalindrome('cbbd'))
+print (x.longestPalindrome('abcd'))
