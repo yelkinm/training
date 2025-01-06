@@ -16,9 +16,7 @@ class Solution:
             res_array[rowcount] = res_array[rowcount]+ i
             if numRows != 1:
                 rowcount = rowcount + sign
-        for r in res_array:
-            res= res+ r
-        return res
+        return ''.join(res_array)
 
 x= Solution()
 print (x.convert('123456789',5))
